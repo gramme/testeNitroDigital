@@ -1,0 +1,18 @@
+SELECT nome_estado 
+FROM estado 
+WHERE nome_estado = ‘Paraná’
+
+SELECT e.nome_estado, p.nome_pais
+FROM pais p 
+JOIN estado e on p.id = e.id_pais
+
+ALTER TABLE pais
+ADD sigla VARCHAR(2)
+
+CREATE TABLE cidade (
+    id SERIAL NOT NULL,
+    nome_cidade VARCHAR(255),
+    id_estado INT NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY (id_estado) REFERENCES id(estado)
+);
