@@ -7,13 +7,13 @@
 	}
 
 	function valida($var)){
-		if (isset($var)) {
+		if (isset($var) && !empty($var)) {
 			return true;
 		}
 		return false;
 	}
 
-	fuction valida_array($arr){
+	function valida_array($arr){
 		if(is_array($arr)){
 			return true;
 		}
